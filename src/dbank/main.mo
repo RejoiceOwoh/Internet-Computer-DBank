@@ -6,7 +6,8 @@ import Float "mo:base/Float";
 
 actor DBank {
   stable var currentValue: Float = 300;
-  // currentValue := 100;
+  currentValue := 100;
+  Debug.print(debug_show(currentValue));
   // You are Yahweh, Miracle Working God. You never lost the battle, Akogu Loji Ja
 
   stable var startTime = Time.now();
@@ -47,3 +48,4 @@ actor DBank {
   }
 
 }
+
