@@ -20,19 +20,22 @@ document.querySelector("form").addEventListener("submit", async function(event){
     await dbank.topUp(inputAmount);
   }
 
-  if (document.getElementById("withdrawal-amount").value.length != 0){
+  if (document.getElementById("withdrawal-amount").value.length != 0)
+  {
     await dbank.withdraw(outputAmount)
   };
 
   await dbank.compound();
 
+  update()
   
   document.getElementById("input-amount").value = "";
   document.getElementById("withdrawal-amount").value = "";
-  button.removeAttribut("disabled");
+  
+  button.removeAttribute("disabled");
 });
 
 async function update() {
   const currentAmount = await dbank.checkBalance();
-  this.document.getElementById("value").innerText = Math.round(currentAmount * 100) / 100;
+  document.getElementById("value").innerText = Math.round(currentAmount * 100) / 100;
 }
